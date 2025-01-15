@@ -1,0 +1,34 @@
+#Contact Form p {
+  padding: 10px 0;
+  text-align: justify;
+  line-height: 1.5;
+  font-family: "Lato", serif;
+}
+/* contactus section */
+Contact Form {
+  font-family: "Lato", serif;
+  width: 70%;
+}
+form div {
+  margin-bottom: 5px;
+  padding: 10px 0;
+}
+.form-label {
+  width: 30%;
+  display: inline-block;
+}
+.form-control {
+  width: 60%;
+  border: none;
+  outline: none;
+  background-color: #f0e2c5;
+  border-bottom: 1px dotted #49281a;
+}
+.but {
+  width: 200px;
+  background-color: #49281a;
+  color: #f0e2c5;
+  padding: 10px 0;
+  border: none;
+  border-radius: 5px;
+}

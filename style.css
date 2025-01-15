@@ -1,0 +1,25 @@
+* {
+  background-color: #362f2b;
+  color: #f0e6d2;
+}
+
+#aboutme {
+  display: flex;
+}
+
+#aboutme h2 {
+  max-width: 70%;
+  margin-top: 40px;
+  margin-bottom: auto;
+}
+
+#aboutme p {
+  max-width: 70%;
+  margin: auto;
+}
+
+#aboutme img {
+  margin-right: auto;
+  width: 250px;
+  height: auto;
+}
