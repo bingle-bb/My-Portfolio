@@ -1,5 +1,5 @@
 * {
-  background-color: #362f2b;
+  background-color: #5f4c40;
   color: #f0e6d2;
   font-family: "Ubuntu", serif;
 }
@@ -13,7 +13,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #362f2b;
+  background-color: #5f4c40;
   padding: 5px 10px;
   color: #f0e6d2;
 }
@@ -38,7 +38,7 @@ nav {
 }
 
 .nav-items a:hover {
-  color: #9b7058;
+  color: #a38673;
 }
 /* about-me section */
 #aboutme {
