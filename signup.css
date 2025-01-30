@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+body {
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 700px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px #6b7280;
+}
+.btn-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 32px;
+}
+.btn-group .btn {
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+  width: max-content;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 8px 6px;
+  border: 2px solid #6b7280;
+  border-radius: 5px;
+  background-color: #f6f6f6;
+  transform: scale(1);
+  cursor: pointer;
+  transition: transform 0.1s ease, background-color 0.5s, color 0.5s;
+}
+.btn-group .btn:hover {
+  background-color: #6b7280;
+  color: #eee;
+}
+
+.btn img {
+  width: 16px;
+  height: 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f6f6f6;
+  border-radius: 50%;
+  padding: 2px;
+}
+.or {
+  position: relative;
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.left-side {
+  background: url("https://source.unsplash.com/400x400/?coffee,cafe") no-repeat
+    center center/cover;
+}
+.right-side {
+  padding: 30px;
+  text-align: center;
+}
+h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.btn-signup {
+  background-color: #4a4a4a;
+  color: #fff;
+  border: 1px solid;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.btn-signup:hover {
+  background-color: #4a4a4a;
+}
+.signin-link {
+  margin-top: 15px;
+  font-size: 14px;
+}
+.signin-link a {
+  color: #4a4a4a;
+  text-decoration: none;
+  font-weight: bold;
+}
+.signin-link a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .image-section {
+    height: 200px;
+  }
+}
+
+.left-side {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcST8aYBS7wPta9Bz2ceuS0_dY_exE7XlgAITg&s);
+}
