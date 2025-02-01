@@ -135,38 +135,74 @@ input:focus {
 }
 
 /* responsive */
+@media (max-width: 480px) {
+  .container {
+    grid-template-columns: 1fr;
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .left-side {
+    height: 180px;
+    background-size: cover;
+  }
+
+  .right-side {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .btn-signup {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .signin-link {
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     grid-template-columns: 1fr;
     width: 90%;
   }
   .left-side {
-    background-image: none; 
+    background-image: none;
   }
 
   .right-side {
-    padding: 20px; 
+    padding: 20px;
   }
 
   input {
-    font-size: 14px; 
-    padding: 8px; 
+    font-size: 14px;
+    padding: 8px;
   }
 
   .btn-signup {
-    font-size: 14px; 
-    padding: 8px; 
-}
-@media (max-width: 1024px) {
-  .container {
-    width: 80%; 
+    font-size: 14px;
+    padding: 8px;
   }
-  .left-side {
-    background-position: center center; 
-}
-}
-@media (min-width: 1440px) {
-  .container {
-    width: 50%; 
+  @media (max-width: 1024px) {
+    .container {
+      width: 80%;
+    }
+    .left-side {
+      background-position: center center;
+    }
+  }
+  @media (min-width: 1440px) {
+    .container {
+      width: 50%;
+    }
   }
 }
