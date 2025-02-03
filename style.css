@@ -6,14 +6,14 @@
 }
 
 body {
-  background: #ecf8fd;
-
+  background: linear-gradient(to right, #af3635, #ff6f61);
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100vh;
 }
 
+/* nav section */
 nav {
   width: 100%;
   display: flex;
@@ -61,7 +61,7 @@ nav {
   height: 100vh;
   background-image: url(images/bg1.jpg);
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: relative;
   background-position: center center;
   background-repeat: no-repeat;
   height: 100vh;
@@ -149,4 +149,76 @@ nav {
     margin-left: 0;
     margin-top: 20px;
   }
+}
+
+/* my-services section */
+#my-services {
+  padding: 50px 20px;
+  margin-bottom: -30px;
+  line-height: 1.5;
+}
+
+#my-services h1 {
+  color: #ffe66d;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+#my-services p {
+  font-size: 20px;
+  color: #440a0ae5;
+}
+
+/* Services Section */
+#services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 50px 20px;
+  width: 100%;
+  height: 100vh;
+
+  background: linear-gradient(to right, #af3635, #ff6f61);
+}
+
+.service {
+  background: linear-gradient(to right, #f4f4f9, #ffffff);
+  color: #440a0ae5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.service:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(to right, #ffe66d, #ff6f61);
+  color: #ffffff;
+}
+
+/* Call to Action */
+.cta {
+  color: linear-gradient(to right, #af3635, #ff6f61);
+  color: white;
+  padding: 50px 20px;
+}
+
+.cta h2 {
+  font-size: 2rem;
+}
+
+.cta .btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: white;
+  color: #0073e6;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.cta .btn:hover {
+  background: #f0f0f0;
 }
