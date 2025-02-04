@@ -1,3 +1,4 @@
+/* Resetting margin, padding, and box-sizing */
 * {
   margin: 0;
   padding: 0;
@@ -5,12 +6,13 @@
   font-family: "Ubuntu", serif;
 }
 
+/* Body styling */
 body {
   background: linear-gradient(to right, #af3635, #ff6f61);
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 /* nav section */
@@ -20,13 +22,14 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
-  background: #a32424;
+  background: #bb382f;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .devo {
   color: #440a0ae5;
 }
+
 .logo {
   font-size: 24px;
   font-weight: bold;
@@ -53,26 +56,22 @@ nav {
   color: #440a0ae5;
 }
 
+/* About Me Section */
 #aboutme {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100vh;
-  background-image: url(images/bg1.jpg);
-  background-size: cover;
-  background-attachment: relative;
-  background-position: center center;
-  background-repeat: no-repeat;
-  padding: 40px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  min-height: 80vh;
+  background: linear-gradient(to right, #c54040, #ff6f61);
+  flex-wrap: wrap;
+  padding: 30px 10px; /* Added padding for better spacing */
 }
 
 .profile-img {
-  width: 350px;
-  height: 350px;
-
-  border-radius: 50px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
   overflow: hidden;
   border: 3px solid #ffe66d;
 }
@@ -84,22 +83,23 @@ nav {
 }
 
 .content {
-  margin-left: 70px;
+  margin-left: 60px;
+  max-width: 500px;
 }
 
 .content h2 {
-  font-size: 30px;
+  font-size: 25px;
   color: #440a0ae5;
 }
 
 .content h1 {
-  font-size: 60px;
+  font-size: 50px;
   margin: 10px 0;
   color: #ffe66d;
 }
 
 .content p {
-  font-size: 20px;
+  font-size: 18px;
   color: #440a0ae5;
   margin-bottom: 20px;
   line-height: 1.5;
@@ -109,89 +109,212 @@ nav {
 .btn-cv {
   display: inline-block;
   padding: 10px 20px;
-  background: #a32424;
+  background: #bb382f;
   color: #ffe76dce;
   text-decoration: none;
   border-radius: 5px;
   transition: 0.3s;
 }
 
-.btn-contact:hover {
-  background: #ffe66d;
-  color: #333;
-}
+.btn-contact:hover,
 .btn-cv:hover {
   background: #ffe66d;
   color: #333;
 }
-@media (max-width: 768px) {
+
+/* Responsive Design */
+@media (max-width: 1024px) {
   nav {
+    padding: 15px 30px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  #aboutme {
     flex-direction: column;
     text-align: center;
+    min-height: auto;
+    padding: 40px 20px;
   }
 
-  .nav-links {
-    flex-direction: column;
-  }
-
-  .nav-links li {
-    margin: 10px 0;
-  }
-
-  .container {
-    flex-direction: column;
-    text-align: center;
+  .profile-img {
+    width: 280px;
+    height: 280px;
   }
 
   .content {
     margin-left: 0;
-    margin-top: 20px;
+    padding-top: 20px;
+  }
+
+  .content h1 {
+    font-size: 45px;
+  }
+
+  .content p {
+    font-size: 18px;
+  }
+
+  .btn-contact,
+  .btn-cv {
+    padding: 8px 16px;
   }
 }
 
-/* my-services section */
-#my-services {
-  padding: 50px 20px;
-  margin-bottom: -50px;
-  line-height: 1.5;
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+  }
+
+  .nav-links li {
+    margin: 5px 0;
+  }
+
+  #aboutme {
+    flex-direction: column;
+    padding: 40px 15px;
+  }
+
+  .profile-img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .content h1 {
+    font-size: 40px;
+  }
+
+  .content p {
+    font-size: 16px;
+  }
+
+  .btn-contact,
+  .btn-cv {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
 }
 
-#my-services h1 {
-  color: #ffe66d;
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+@media (max-width: 480px) {
+  nav {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  #aboutme {
+    padding: 30px 10px;
+  }
+
+  .profile-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .content h1 {
+    font-size: 35px;
+  }
+
+  .content p {
+    font-size: 15px;
+  }
+
+  .btn-contact,
+  .btn-cv {
+    padding: 7px 12px;
+    font-size: 13px;
+  }
 }
 
-#my-services p {
-  font-size: 20px;
-  color: #440a0ae5;
+/* Responsive Design */
+
+/* Large Screens (max-width: 1200px) */
+@media (max-width: 1200px) {
+  #services {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 30px 15px;
+  }
+
+  #my-services h1 {
+    font-size: 1.8rem;
+  }
 }
 
-/* Services Section */
-#services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 50px 20px;
-  width: 100%;
-  height: 100vh;
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  #services {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    padding: 30px 10px;
+  }
 
-  background: linear-gradient(to right, #af3635, #ff6f61);
+  .service {
+    height: 210px; /* Reduced height */
+  }
+
+  #my-services h1 {
+    font-size: 1.7rem;
+  }
+
+  #my-services p {
+    font-size: 16px;
+  }
 }
 
-.service {
-  background: linear-gradient(to right, #f4f4f9, #ffffff);
-  color: #440a0ae5;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
+/* Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+  #services {
+    grid-template-columns: 1fr;
+    padding: 25px 10px;
+  }
+
+  .service {
+    height: auto;
+    padding: 12px;
+  }
+
+  #my-services h1 {
+    font-size: 1.6rem;
+  }
+
+  #my-services p {
+    font-size: 0.9rem;
+  }
 }
 
-.service:hover {
-  transform: translateY(-5px);
-  background: linear-gradient(to right, #ffe66d, #ff6f61);
-  color: #ffffff;
+/* Small Mobile Screens (max-width: 480px) */
+@media (max-width: 480px) {
+  #services {
+    padding: 20px 5px;
+  }
+
+  .service {
+    padding: 10px;
+  }
+
+  #my-services h1 {
+    font-size: 1.4rem;
+  }
+
+  #my-services p {
+    font-size: 0.85rem;
+  }
 }
 
 /* skills section */
@@ -210,7 +333,6 @@ nav {
   gap: 20px;
   max-width: 900px;
   margin: auto;
-  gr
 }
 
 .skill {
