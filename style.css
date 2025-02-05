@@ -1,4 +1,7 @@
-/* Resetting margin, padding, and box-sizing */
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -63,7 +66,12 @@ nav {
   justify-content: center;
   width: 100%;
   min-height: 80vh;
-  background: linear-gradient(to right, #c54040, #ff6f61);
+  background: linear-gradient(
+    to right,
+    rgba(197, 64, 64, 0.5),
+    rgba(255, 143, 107, 0.5),
+    rgba(255, 111, 97, 0.5)
+  );
   flex-wrap: wrap;
   padding: 30px 10px; /* Added padding for better spacing */
 }
@@ -118,8 +126,13 @@ nav {
 
 .btn-contact:hover,
 .btn-cv:hover {
-  background: #ffe66d;
-  color: #333;
+  background: linear-gradient(
+    to right,
+    rgba(255, 240, 140, 0.6),
+    rgba(255, 220, 110, 0.6),
+    rgba(255, 200, 90, 0.6)
+  );
+  color: #440a0ae5;
 }
 
 /* Responsive Design */
@@ -265,7 +278,7 @@ nav {
   }
 
   .service {
-    height: 210px; /* Reduced height */
+    height: 210px;
   }
 
   #my-services h1 {
@@ -336,7 +349,7 @@ nav {
 }
 
 .skill {
-  background: #ffffff; /* White card background */
+  background: #ffffff;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -345,7 +358,7 @@ nav {
 
 .skill:hover {
   transform: translateY(-5px);
-  background: linear-gradient(to right, #ffe66d, #ff6f61); /* Gradient hover */
+  background: linear-gradient(to right, #ffe66d, #ff6f61);
   color: white;
 }
 
