@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebar</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <style>
+    /* General Page Styles */
+    body {
+      margin: 0;
+      background: #111;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      right: 10px; /* Sidebar stays on the right */
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: flex-end; /* Ensures alignment stays fixed */
+    }
+
+    /* Sidebar Buttons - Initially Circular */
+    .sidebar a {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: #333;
+      border-radius: 50%;
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      overflow: hidden;
+      transition: width 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+    }
+
+    /* Icons */
+    .sidebar a i {
+      font-size: 18px;
+      position: absolute;
+      right: 15px; /* Keeps icon in place */
+      transition: none; /* Prevents movement */
+    }
+
+    /* Hide Text Initially */
+    .sidebar a span {
+      position: absolute;
+      right: 60px; /* Start outside */
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    /* Expand on Hover (Only Hovered Button Expands) */
+    .sidebar a:hover {
+      width: 140px;
+      border-radius: 25px;
+      background: #fcf61c;
+      color: black;
+      padding-left: 15px;
+    }
+
+    /* Show Text on Hover */
+    .sidebar a:hover span {
+      opacity: 1;
+    }
+
+    /* Fix Icon Position on Hover */
+    .sidebar a:hover i {
+      right: 15px; /* Keeps icon in the same place */
+    }
+  </style>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <a href="#" class="home-btn">
+        <i class="fas fa-home"></i> <span>Home</span>
+      </a>
+      <a href="#" class="about-btn">
+        <i class="fas fa-user"></i> <span>About</span>
+      </a>
+      <a href="#" class="services-btn">
+        <i class="fas fa-cogs"></i> <span>Services</span>
+      </a>
+      <a href="#" class="skills-btn">
+        <i class="fas fa-lightbulb"></i> <span>Skills</span>
+      </a>
+      <a href="#" class="contact-btn">
+        <i class="fas fa-envelope"></i> <span>Contact</span>
+      </a>
+    </div>
+  </body>
+</html>

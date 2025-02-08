@@ -1,0 +1,206 @@
+/* General Styling */
+body {
+  font-family: Poppins, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #111;
+  color: white;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 50px;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+/* Left Image Section */
+.image-box {
+  background-color: #ffc107;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.image-box img {
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+/* Right Text Section */
+.text-box {
+  max-width: 500px;
+}
+
+.text-box h2 {
+  font-size: 1.5rem;
+  color: #ffc107;
+}
+
+.text-box span {
+  font-weight: bold;
+}
+
+.text-box h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.text-box p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #bbb;
+}
+
+/* Button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #ffc107;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.btn .arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffc107;
+  color: black;
+  padding: 6px 10px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.btn:hover {
+  background-color: #ffc107;
+  color: black;
+}
+
+/* Sidebar */
+.social-icons {
+  position: fixed;
+  top: 50%;
+  right: 10px; /* Sidebar positioned on the right */
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: #ff9800;
+  color: white;
+  font-size: 20px;
+  border-radius: 50px;
+  transition: 0.3s;
+  text-decoration: none;
+  position: relative;
+}
+
+.social-icons a i {
+  position: absolute;
+}
+
+/* Label Text (Hidden by Default) */
+.social-icons a::after {
+  content: attr(data-label);
+  position: absolute;
+  right: 60px;
+  background: #ff9800;
+  color: white;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 50px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease-in-out;
+}
+
+/* Show Label on Hover */
+.social-icons a:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .text-box {
+    max-width: 90%;
+  }
+
+  .text-box h1 {
+    font-size: 2rem;
+  }
+
+  .social-icons {
+    right: 5px;
+    gap: 10px;
+  }
+
+  .social-icons a {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+
+  .social-icons a::after {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .social-icons {
+    position: fixed;
+    top: 10px;
+    right: 50%;
+    transform: translateX(50%);
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .social-icons a {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .social-icons a::after {
+    display: none; /* Hide labels on small screens */
+  }
+}

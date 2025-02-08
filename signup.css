@@ -7,11 +7,7 @@
   font-family: "Quicksand", sans-serif;
 }
 body {
-  background-image: url(images/signupbg.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center center;
-  background-repeat: no-repeat;
+  background: #ffe6a6;
   display: flex;
   justify-content: center;
   align-items: center;
