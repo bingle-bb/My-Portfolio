@@ -11,26 +11,20 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <style>
-    /* General Page Styles */
-    body {
-      margin: 0;
-      background: #111;
-      font-family: Arial, sans-serif;
-    }
-
     /* Sidebar */
     .sidebar {
       position: fixed;
-      right: 10px; /* Sidebar stays on the right */
+      right: 10px;
       top: 50%;
       transform: translateY(-50%);
       display: flex;
       flex-direction: column;
       gap: 15px;
-      align-items: flex-end; /* Ensures alignment stays fixed */
+      align-items: flex-end;
+      transition: right 0.3s ease-in-out;
     }
 
-    /* Sidebar Buttons - Initially Circular */
+    /* Sidebar Buttons */
     .sidebar a {
       position: relative;
       display: flex;
@@ -43,7 +37,6 @@
       text-decoration: none;
       color: white;
       font-size: 18px;
-      font-weight: bold;
       overflow: hidden;
       transition: width 0.3s ease-in-out, border-radius 0.3s ease-in-out;
     }
@@ -52,24 +45,23 @@
     .sidebar a i {
       font-size: 18px;
       position: absolute;
-      right: 15px; /* Keeps icon in place */
-      transition: none; /* Prevents movement */
+      right: 15px;
     }
 
     /* Hide Text Initially */
     .sidebar a span {
       position: absolute;
-      right: 60px; /* Start outside */
+      right: 60px;
       white-space: nowrap;
       opacity: 0;
       transition: opacity 0.3s ease-in-out;
     }
 
-    /* Expand on Hover (Only Hovered Button Expands) */
+    /* Expand on Hover */
     .sidebar a:hover {
       width: 140px;
       border-radius: 25px;
-      background: #fcf61c;
+      background: #ffc107;
       color: black;
       padding-left: 15px;
     }
@@ -81,27 +73,97 @@
 
     /* Fix Icon Position on Hover */
     .sidebar a:hover i {
-      right: 15px; /* Keeps icon in the same place */
+      right: 15px;
+    }
+
+    /* Toggle Button for Small Screens */
+    .toggle-btn {
+      position: fixed;
+      right: 15px;
+      top: 15px;
+      background: #ffc107;
+      color: black;
+      border: none;
+      padding: 10px 15px;
+      font-size: 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: 0.3s ease-in-out;
+      display: none; /* Hide by default */
+    }
+
+    .toggle-btn:hover {
+      background: white;
+    }
+
+    /* Hide Sidebar on Small Screens */
+    @media (max-width: 768px) {
+      .sidebar {
+        right: -200px; /* Hide initially */
+        flex-direction: column;
+        align-items: flex-start;
+        background: #222;
+        padding: 20px;
+        border-radius: 10px;
+        transition: right 0.3s ease-in-out;
+      }
+
+      .sidebar.show {
+        right: 10px; /* Show when toggled */
+      }
+
+      .sidebar a {
+        width: 100%;
+        border-radius: 5px;
+        justify-content: flex-start;
+        padding-left: 15px;
+      }
+
+      .sidebar a i {
+        position: relative;
+        right: auto;
+        margin-right: 10px;
+      }
+
+      .sidebar a span {
+        opacity: 1;
+        position: relative;
+        right: auto;
+      }
+
+      .toggle-btn {
+        display: block; /* Show on small screens */
+      }
     }
   </style>
   <body>
+    <!-- Toggle Button -->
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
     <!-- Sidebar -->
-    <div class="sidebar">
-      <a href="#" class="home-btn">
-        <i class="fas fa-home"></i> <span>Home</span>
-      </a>
-      <a href="#" class="about-btn">
-        <i class="fas fa-user"></i> <span>About</span>
-      </a>
-      <a href="#" class="services-btn">
-        <i class="fas fa-cogs"></i> <span>Services</span>
-      </a>
-      <a href="#" class="skills-btn">
-        <i class="fas fa-lightbulb"></i> <span>Skills</span>
-      </a>
-      <a href="#" class="contact-btn">
-        <i class="fas fa-envelope"></i> <span>Contact</span>
-      </a>
+    <div class="sidebar" id="sidebar">
+      <a href="index.html" class="home-btn"
+        ><i class="fas fa-home"></i> <span>Home</span></a
+      >
+      <a href="#" class="about-btn"
+        ><i class="fas fa-user"></i> <span>About</span></a
+      >
+      <a href="#" class="services-btn"
+        ><i class="fas fa-cogs"></i> <span>Services</span></a
+      >
+      <a href="#" class="skills-btn"
+        ><i class="fas fa-lightbulb"></i> <span>Skills</span></a
+      >
+      <a href="contactform.html" class="contact-btn"
+        ><i class="fas fa-envelope"></i> <span>Contact</span></a
+      >
     </div>
+
+    <script>
+      function toggleSidebar() {
+        let sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("show");
+      }
+    </script>
   </body>
 </html>

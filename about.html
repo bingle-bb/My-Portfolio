@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ABOUT ME - BB</title>
+    <link rel="stylesheet" href="about.css" />
+    <link rel="shortcut icon" href="images/ht.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="contact-wrapper">
+        <h1 class="header-text">ABOUT <span class="highlight">Me</span></h1>
+        
+      <div class="resume-container">
+        <div class="personal-info">
+          <h3>PERSONAL INFOS</h3>
+          <div class="info-grid">
+            <p>Name : <strong>BB</strong></p>
+            <p>Age : <strong>21 Years</strong></p>
+            <p>Nationality :<strong> Myanmar</strong></p>
+            <p>
+             Freelance :
+             <strong><span class="available">Available</span></strong>
+            </p>
+            <p>Address : <strong>Bingle</strong></p>
+            <p>
+              Phone : 
+              <strong><a href="tel:+95921184010">+95921184010</a></strong>
+            </p>
+            <p>
+             Email :
+             <strong><a href="mailto:bb@gmail.com">bb@gmail.com</a> </strong>
+            </p>
+            
+            <p>Languages : <strong>Burmese, English</strong></p>
+          </div>
+
+          <a href="#" class="download-btn">
+            DOWNLOAD CV <i class="fas fa-download"></i>
+          </a>
+        </div>
+
+        <div class="stats">
+          <div class="stat-box">
+            <h2>2<sup>+</sup></h2>
+            <p>YEARS OF EXPERIENCE</p>
+          </div>
+          <div class="stat-box">
+            <h2>5<sup>+</sup></h2>
+            <p>HAPPY CUSTOMERS</p>
+          </div>
+          <div class="stat-box">
+            <h2>2<sup>+</sup></h2>
+            <p>YEARS OF EXPERIENCE</p>
+          </div>
+        </div>
+    </div>
+ 
+
+    <!-- Toggle Button -->
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <a href="index.html" class="home-btn"
+        ><i class="fas fa-home"></i> <span>Home</span></a
+      >
+      <a href="about.html" class="about-btn"
+        ><i class="fas fa-user"></i> <span>About</span></a
+      >
+      <a href="#" class="skills-btn"
+        ><i class="fas fa-project-diagram"></i> <span>Projects</span></a
+      >
+      <a href="#" class="services-btn"
+        ><i class="fas fa-cogs"></i> <span>Services</span></a
+      >
+      <a href="contactme.html" class="contact-btn"
+        ><i class="fas fa-envelope"></i> <span>Contact</span></a
+      >
+    </div>
+
+    <script>
+      function toggleSidebar() {
+        let sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>
