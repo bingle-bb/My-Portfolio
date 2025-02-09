@@ -20,15 +20,18 @@ body {
   height: 100vh;
   padding: 50px;
   position: relative;
+  flex-direction: column;
+  text-align: center;
 }
 
 .container {
   display: flex;
   align-items: center;
   gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* Left Image Section */
 .image-box {
   height: 450px;
   background-color: #ffc107;
@@ -45,7 +48,6 @@ body {
   border-radius: 10px;
 }
 
-/* Right Text Section */
 .text-box {
   max-width: 500px;
   margin-left: 20px;
@@ -73,7 +75,6 @@ body {
   color: #bbb;
 }
 
-/* Button */
 .btn {
   display: inline-block;
   background-color: black;
@@ -113,20 +114,101 @@ body {
   transition: 0.3s ease-in-out;
 }
 
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+  .image-box {
+    width: 200px; /* Set a fixed width for small screens */
+    height: 270px; /* Set a fixed height to maintain a square container */
+    /* Make the box circular */
+    overflow: hidden; /* Ensure content doesn't overflow */
+    margin-left: 0;
+    padding: 0;
+  }
+
+  .image-box img {
+    width: 100%; /* Make the image fill the container */
+    height: 100%; /* Ensure the image maintains the circular shape */
+    object-fit: cover; /* Crop the image if necessary to maintain its aspect ratio */
+  }
+  .text-box {
+    max-width: 90%;
+  }
+  .text-box h2 {
+    font-size: 30px;
+  }
+  .text-box h1 {
+    font-size: 1rem;
+  }
+  .text-box p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 10px 18px;
+    font-size: 1rem;
+  }
+
+  .btn-download {
+    font-size: 18px;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero {
+    padding: 30px;
+  }
+
+  .text-box h2 {
+    font-size: 30px;
+  }
+
+  .text-box h1 {
+    font-size: 1.5rem;
+  }
+
+  .text-box p {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .btn-download {
+    font-size: 16px;
+    width: 45px;
+    height: 45px;
+  }
+}
+
 /* Sidebar */
 .sidebar {
   position: fixed;
-  right: 10px; /* Sidebar stays on the right */
+  right: 10px;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   gap: 15px;
-  align-items: flex-end; /* Ensures alignment stays fixed */
-  margin-right: 10px;
+  align-items: flex-end;
+  transition: right 0.3s ease-in-out;
 }
 
-/* Sidebar Buttons - Initially Circular */
+/* Sidebar Buttons */
 .sidebar a {
   position: relative;
   display: flex;
@@ -138,8 +220,7 @@ body {
   border-radius: 50%;
   text-decoration: none;
   color: white;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 18px;
   overflow: hidden;
   transition: width 0.3s ease-in-out, border-radius 0.3s ease-in-out;
 }
@@ -148,20 +229,19 @@ body {
 .sidebar a i {
   font-size: 18px;
   position: absolute;
-  right: 15px; /* Keeps icon in place */
-  transition: none; /* Prevents movement */
+  right: 15px;
 }
 
 /* Hide Text Initially */
 .sidebar a span {
   position: absolute;
-  right: 60px; /* Start outside */
+  right: 60px;
   white-space: nowrap;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
 
-/* Expand on Hover (Only Hovered Button Expands) */
+/* Expand on Hover */
 .sidebar a:hover {
   width: 140px;
   border-radius: 25px;
@@ -177,39 +257,74 @@ body {
 
 /* Fix Icon Position on Hover */
 .sidebar a:hover i {
-  right: 15px; /* Keeps icon in the same place */
+  right: 15px;
 }
 
-/* Sidebar Toggle Button */
+/* Toggle Button for Small Screens */
 .toggle-btn {
-  display: none; /* Hide by default */
   position: fixed;
-  top: 20px;
-  right: 20px;
+  right: 15px;
+  top: 15px;
   background: #ffc107;
-  border: none;
-  padding: 15px;
-  font-size: 24px;
   color: black;
-  border-radius: 50%;
+  border: none;
+  padding: 10px 15px;
+  font-size: 20px;
   cursor: pointer;
-  z-index: 999;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+  display: none; /* Hide by default */
 }
 
-/* Mobile View */
+.toggle-btn:hover {
+  background: white;
+}
+
+/* Hide Sidebar on Small Screens */
 @media (max-width: 768px) {
-  /* Hide the sidebar by default on small screens */
   .sidebar {
-    display: none;
+    right: -200px; /* Hide initially */
+    flex-direction: column;
+    align-items: flex-start;
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    transition: right 0.3s ease-in-out;
   }
 
-  /* Show toggle button */
+  .sidebar.show {
+    right: 10px; /* Show when toggled */
+  }
+
+  .sidebar a {
+    width: 100%;
+    border-radius: 5px;
+    justify-content: flex-start;
+    padding-left: 15px;
+  }
+
+  .sidebar a i {
+    position: relative;
+    right: auto;
+    margin-right: 10px;
+  }
+
+  .sidebar a span {
+    opacity: 1;
+    position: relative;
+    right: auto;
+  }
+
   .toggle-btn {
-    display: block;
+    display: block; /* Show on small screens */
   }
-
-  /* Show sidebar when active */
-  .sidebar.active {
-    display: flex;
+}
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+  .contact-info,
+  .contact-form {
+    width: 100%;
   }
 }
