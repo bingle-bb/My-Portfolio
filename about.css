@@ -46,23 +46,25 @@ body {
   text-shadow: 2px 2px 10px rgba(255, 215, 0, 0.5);
 }
 
-/* resume */
+/* Resume Container */
 .resume-container {
   display: flex;
   justify-content: space-between;
   align-items: start;
   gap: 40px;
   padding: 50px 10%;
+  flex-wrap: wrap; /* Ensures content adjusts on smaller screens */
 }
 
+/* Personal Info */
 .personal-info {
   text-align: left;
   width: 45%;
-
   padding: 25px;
   border-radius: 12px;
 }
 
+/* Personal Info Header */
 .personal-info h3 {
   font-weight: 600;
   margin-bottom: 15px;
@@ -71,9 +73,10 @@ body {
   color: #ffcc00;
 }
 
+/* Grid Layout for Information */
 .info-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 12px;
 }
 
@@ -97,6 +100,7 @@ a:hover {
   color: #ffcc00c7;
 }
 
+/* Download Button */
 .download-btn {
   display: inline-block;
   margin-top: 20px;
@@ -127,6 +131,7 @@ a:hover {
   flex-wrap: wrap;
 }
 
+/* Stat Box */
 .stat-box {
   background: #1a1a1a;
   padding: 20px;
@@ -145,6 +150,96 @@ a:hover {
 
 .stat-box sup {
   font-size: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .resume-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 5%;
+  }
+
+  .personal-info,
+  .stats {
+    width: 100%;
+  }
+
+  .stat-box {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .header-text {
+    font-size: 2.8rem;
+  }
+
+  .header-text::before {
+    font-size: 4.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-text {
+    font-size: 2.2rem;
+    padding-top: 30px;
+  }
+
+  .header-text::before {
+    font-size: 3.8rem;
+    letter-spacing: 5px;
+  }
+
+  .resume-container {
+    padding: 30px 5%;
+  }
+
+  .personal-info {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .stats {
+    width: 100%;
+  }
+
+  .stat-box {
+    width: 90%;
+  }
+
+  .download-btn {
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-text {
+    font-size: 2rem;
+  }
+
+  .header-text::before {
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+  }
+
+  .resume-container {
+    padding: 20px;
+  }
+
+  .personal-info {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .stat-box {
+    width: 100%;
+  }
+
+  .download-btn {
+    width: 100%;
+  }
 }
 
 /* Responsive */
