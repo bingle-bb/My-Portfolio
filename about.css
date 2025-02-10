@@ -34,7 +34,7 @@ body {
   font-size: 5.5rem;
   font-weight: 900;
   letter-spacing: 10px;
-  color: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0);
   text-transform: uppercase;
   z-index: -1;
 }
@@ -83,6 +83,7 @@ body {
 .personal-info p {
   margin: 5px 0;
   font-size: 16px;
+  color: #f3f3f3;
 }
 
 .available {
@@ -144,10 +145,12 @@ a:hover {
 
 .stat-box h2 {
   font-size: 38px;
-  color: #ffcc00;
+  color: #ffc107;
   transition: 0.3s ease;
 }
-
+.stat-box p {
+  color: #f3f3f3;
+}
 .stat-box sup {
   font-size: 20px;
 }
@@ -240,6 +243,59 @@ a:hover {
   .download-btn {
     width: 100%;
   }
+}
+
+.skills-section {
+  text-align: center;
+  padding: 40px;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.skill {
+  text-align: center;
+  width: 120px;
+}
+
+.progress-circle {
+  width: 100px;
+  height: 100px;
+  background-color: #f3f3f3;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: conic-gradient(
+    #ffc107 var(--progress),
+    black var(--progress)
+  );
+}
+
+.progress-circle .percentage {
+  position: absolute;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffc107;
+}
+
+p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+
+.skills-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
 /* Responsive */
@@ -393,4 +449,5 @@ a:hover {
   .toggle-btn {
     display: block; /* Show on small screens */
   }
+}
 }
