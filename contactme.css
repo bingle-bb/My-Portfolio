@@ -160,6 +160,59 @@ textarea {
 .send-btn:hover .icon {
   color: black;
 }
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .header-text {
+    font-size: 3rem;
+  }
+  .header-text::before {
+    font-size: 5rem;
+  }
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+  }
+  .contact-info,
+  .contact-form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-text {
+    font-size: 2.5rem;
+  }
+  .header-text::before {
+    font-size: 4rem;
+  }
+  .contact-container {
+    padding: 1rem;
+  }
+  textarea {
+    height: 150px;
+  }
+  .send-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-text {
+    font-size: 2rem;
+  }
+  .header-text::before {
+    font-size: 3rem;
+    letter-spacing: 5px;
+  }
+  .contact-container {
+    padding: 0rem;
+  }
+  .send-btn {
+    font-size: 15px;
+  }
+}
 
 /* Sidebar */
 .sidebar {
