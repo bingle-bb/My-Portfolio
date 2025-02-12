@@ -154,6 +154,37 @@ a:hover {
 .stat-box sup {
   font-size: 20px;
 }
+/* Responsive for star-box */
+@media (max-width: 768px) {
+  .stats {
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat-box {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats {
+    width: 90%;
+  }
+
+  .stat-box {
+    padding: 15px;
+  }
+
+  .stat-box h2 {
+    font-size: 30px;
+  }
+
+  .stat-box p {
+    font-size: 14px;
+  }
+}
 
 /* Responsive for about-section */
 @media (max-width: 1024px) {
@@ -163,14 +194,8 @@ a:hover {
     padding: 40px 5%;
   }
 
-  .personal-info,
-  .stats {
+  .personal-info {
     width: 100%;
-  }
-
-  .stat-box {
-    width: 80%;
-    margin-bottom: 20px;
   }
 
   .header-text {
@@ -202,14 +227,6 @@ a:hover {
     padding: 20px;
   }
 
-  .stats {
-    width: 100%;
-  }
-
-  .stat-box {
-    width: 90%;
-  }
-
   .download-btn {
     width: 100%;
     text-align: center;
@@ -235,11 +252,6 @@ a:hover {
     width: 100%;
     padding: 15px;
   }
-
-  .stat-box {
-    width: 100%;
-  }
-
   .download-btn {
     width: 100%;
   }
@@ -259,16 +271,6 @@ a:hover {
 
   .info-grid {
     grid-template-columns: 1fr;
-  }
-
-  .stats {
-    flex-direction: column;
-  }
-
-  .stat-box {
-    width: 80%;
-    margin: 10px 5px;
-    margin: 20px;
   }
 }
 
