@@ -235,7 +235,7 @@ body {
 /* Hide Text Initially */
 .sidebar a span {
   position: absolute;
-  right: 60px;
+  right: 50px;
   white-space: nowrap;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SERVICES - BB</title>
+    <link rel="stylesheet" href="services.css" />
+    <link rel="shortcut icon" href="images/ht.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- skills section -->
+    <section class="services-section">
+      <h2 class="section-title">MY SERVICES</h2>
+
+      <div class="services-container">
+        <div class="service-card">
+          <i class="fas fa-code"></i>
+          <h3>Web Design & Development</h3>
+          <p>
+            Designing and developing clean, visually appealing, and fully
+            responsive websites tailored to your needs.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <i class="fab fa-wordpress"></i>
+          <h3>WordPress Development</h3>
+          <p>
+            Building custom WordPress websites, themes, and plugins to provide
+            flexible and easy-to-manage solutions.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <i class="fas fa-laptop-code"></i>
+          <h3>Front-End Development</h3>
+          <p>
+            Bringing designs to life with HTML, CSS, JavaScript, and frameworks
+            to ensure a seamless user experience.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <i class="fas fa-paint-brush"></i>
+          <h3>UI/UX Design</h3>
+          <p>
+            Creating intuitive and user-friendly interfaces to enhance user
+            engagement and satisfaction.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <i class="fas fa-tachometer-alt"></i>
+          <h3>Website Optimization</h3>
+          <p>
+            Improving website speed, performance, and accessibility for a smooth
+            and efficient browsing experience.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <i class="fas fa-tools"></i>
+          <h3>Maintenance & Support</h3>
+          <p>
+            Ensuring your website remains up-to-date, secure, and functional
+            with ongoing support and improvements.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Toggle Button -->
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <a href="index.html" class="home-btn"
+        ><i class="fas fa-home"></i> <span>Home</span></a
+      >
+      <a href="about.html" class="about-btn"
+        ><i class="fas fa-user"></i> <span>About</span></a
+      >
+      <a href="#" class="skills-btn"
+        ><i class="fas fa-project-diagram"></i> <span>Projects</span></a
+      >
+      <a href="services.html" class="services-btn"
+        ><i class="fas fa-cogs"></i> <span>Services</span></a
+      >
+      <a href="contactme.html" class="contact-btn"
+        ><i class="fas fa-envelope"></i> <span>Contact</span></a
+      >
+    </div>
+
+    <script>
+      function toggleSidebar() {
+        let sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>
