@@ -283,7 +283,7 @@ a:hover {
 .section-title {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   position: relative;
   display: inline-block;
 }
@@ -294,12 +294,6 @@ a:hover {
   height: 3px;
   background-color: #ffc107;
   margin: 5px auto 0;
-}
-
-.section-description {
-  color: #f3f3f3;
-  max-width: 600px;
-  margin: 10px auto 40px;
 }
 
 .skills-container {
@@ -339,7 +333,288 @@ a:hover {
   font-size: 14px;
   color: #f3f3f3;
 }
+/* experience and education section */
+.timeline-header {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 90px;
+}
+.timeline-header::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  background-color: #ffc107;
+  margin: 5px auto 0;
+}
 
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 15px 150px;
+  padding: 20px;
+}
+
+.timeline-item {
+  position: relative;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 1px;
+  height: 75%;
+  background: rgba(255, 255, 255, 0.26);
+}
+
+.icon-container {
+  position: absolute;
+  left: -20px;
+  width: 40px;
+  height: 40px;
+  background: #fcaf02;
+  color: black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.date {
+  display: inline-block;
+  background: #333;
+  color: #ddd;
+  padding: 8px 9px;
+  border-radius: 50px;
+  margin-left: 15px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-left: 18px;
+  text-transform: uppercase;
+}
+
+.company {
+  color: #aaa;
+  margin-left: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.description {
+  font-size: 14px;
+  margin-left: 18px;
+  color: #ccc;
+  margin-top: 5px;
+}
+
+/* Responsive Design */
+/* Small devices (Mobile phones, 480px and up) */
+@media (max-width: 480px) {
+  .timeline {
+    grid-template-columns: 1fr; /* Single column for small screens */
+    margin: 5px 20px; /* Reduce margin */
+  }
+
+  .timeline-item {
+    padding: 15px;
+  }
+
+  .icon-container {
+    left: -15px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .date {
+    font-size: 10px;
+    padding: 6px 8px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .company {
+    font-size: 12px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+}
+
+/* Medium devices (Tablets, 768px and up) */
+@media (max-width: 768px) {
+  .timeline {
+    grid-template-columns: 1fr;
+    margin: 5px 40px;
+  }
+
+  .timeline-item {
+    padding: 18px;
+  }
+
+  .icon-container {
+    left: -18px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .date {
+    font-size: 11px;
+    padding: 7px 9px;
+  }
+
+  .title {
+    font-size: 17px;
+  }
+
+  .company {
+    font-size: 13px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+}
+
+/* Large devices (Desktops, 1024px and up) */
+@media (max-width: 1024px) {
+  .timeline {
+    grid-template-columns: 1fr;
+    margin: 5px 60px;
+  }
+
+  .timeline-item {
+    padding: 20px;
+  }
+
+  .icon-container {
+    left: -20px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .date {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .company {
+    font-size: 14px;
+  }
+
+  .description {
+    font-size: 15px;
+  }
+}
+
+/* Extra large devices (Large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .timeline {
+    grid-template-columns: repeat(2, 1fr); /* Two column layout */
+    gap: 30px;
+  }
+
+  .timeline-item {
+    padding: 20px;
+  }
+
+  .icon-container {
+    left: -20px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .date {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .company {
+    font-size: 14px;
+  }
+
+  .description {
+    font-size: 15px;
+  }
+}
+/* .certificates */
+.certificates {
+  text-align: center;
+  margin-top: 40px;
+  padding: 40px 20px;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.cert-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.cert-item {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.cert-item i {
+  font-size: 40px;
+  color: #ebe4e4;
+  margin-bottom: 10px;
+}
+.cert-item h3 {
+  color: #ffc107;
+}
+.cert-btn {
+  display: inline-block;
+  padding: 8px 12px;
+  background: #ffc507c7;
+  color: #ebe4e4;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 200px;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.cert-btn:hover {
+  background: #e0a800;
+}
 /* Sidebar-section */
 .sidebar {
   position: fixed;

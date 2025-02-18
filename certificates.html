@@ -3,75 +3,152 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>See More Button</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        padding: 20px;
-      }
-
-      .card-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-      }
-
-      .card {
-        background-color: #ffcc00;
-        padding: 20px;
-        border-radius: 8px;
-        width: 150px;
-        height: 150px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .hidden {
-        display: none;
-      }
-
-      .see-more-btn {
-        display: block;
-        background-color: #007bff;
-        color: white;
-        padding: 10px 20px;
-        font-size: 16px;
-        border: none;
-        border-radius: 5px;
-        margin-top: 20px;
-        cursor: pointer;
-      }
-
-      .see-more-btn:hover {
-        background-color: #0056b3;
-      }
-    </style>
+    <title>Document</title>
   </head>
+  <style>
+    .certificates {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .cert-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .cert-item {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .cert-item i {
+      font-size: 40px;
+      color: #ffc107;
+      margin-bottom: 10px;
+    }
+
+    .cert-btn {
+      display: inline-block;
+      padding: 8px 12px;
+      background: #ffc107;
+      color: #333;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .cert-btn:hover {
+      background: #e0a800;
+    }
+  </style>
   <body>
-    <section class="card-container">
-      <div class="card">Card 1</div>
-      <div class="card">Card 2</div>
-      <div class="card">Card 3</div>
-      <div class="card hidden">Card 4</div>
-      <div class="card hidden">Card 5</div>
-      <div class="card hidden">Card 6</div>
+    <section class="certificates">
+      <h2 class="section-title">Certificates</h2>
+
+      <div class="cert-container">
+        <div class="cert-item">
+          <i class="fas fa-certificate"></i>
+          <h3>Certified Web Developer</h3>
+          <p>Google - 2025</p>
+          <a
+            href="https://drive.google.com/your-cert-link1"
+            target="_blank"
+            class="cert-btn"
+            >View Certificate</a
+          >
+        </div>
+        <div class="cert-item">
+          <i class="fas fa-certificate"></i>
+          <h3>UI/UX Design Certification</h3>
+          <p>Coursera - 2024</p>
+          <a
+            href="https://drive.google.com/your-cert-link2"
+            target="_blank"
+            class="cert-btn"
+            >View Certificate</a
+          >
+        </div>
+        <div class="cert-item">
+          <i class="fas fa-certificate"></i>
+          <h3>JavaScript Mastery</h3>
+          <p>Udemy - 2024</p>
+          <a
+            href="https://drive.google.com/your-cert-link3"
+            target="_blank"
+            class="cert-btn"
+            >View Certificate</a
+          >
+        </div>
+        <div class="cert-item">
+          <i class="fas fa-certificate"></i>
+          <h3>Advanced React</h3>
+          <p>LinkedIn Learning - 2023</p>
+          <a
+            href="https://drive.google.com/your-cert-link4"
+            target="_blank"
+            class="cert-btn"
+            >View Certificate</a
+          >
+        </div>
+        <div class="cert-item">
+          <i class="fas fa-certificate"></i>
+          <h3>Python for Beginners</h3>
+          <p>Harvard CS50 - 2023</p>
+          <a
+            href="https://drive.google.com/your-cert-link5"
+            target="_blank"
+            class="cert-btn"
+            >View Certificate</a
+          >
+        </div>
+        <div class="cert-item">
+          <i class="fas fa-certificate"></i>
+          <h3>Responsive Web Design</h3>
+          <p>FreeCodeCamp - 2023</p>
+          <a
+            href="https://drive.google.com/your-cert-link6"
+            target="_blank"
+            class="cert-btn"
+            >View Certificate</a
+          >
+        </div>
+        <div class="cert-item">
+          <i class="fas fa-certificate"></i>
+          <h3>Cyber Security Fundamentals</h3>
+          <p>IBM - 2022</p>
+          <a
+            href="https://drive.google.com/your-cert-link7"
+            target="_blank"
+            class="cert-btn"
+            >View Certificate</a
+          >
+        </div>
+        <div class="cert-item">
+          <i class="fas fa-certificate"></i>
+          <h3>Backend Development</h3>
+          <p>Meta - 2022</p>
+          <a
+            href="https://drive.google.com/your-cert-link8"
+            target="_blank"
+            class="cert-btn"
+            >View Certificate</a
+          >
+        </div>
+      </div>
     </section>
-
-    <button id="see-more" class="see-more-btn">See More</button>
-
-    <script>
-      document
-        .getElementById("see-more")
-        .addEventListener("click", function () {
-          const hiddenCards = document.querySelectorAll(".hidden");
-          hiddenCards.forEach((card) => {
-            card.classList.remove("hidden");
-          });
-          // After showing all cards, hide the button
-          this.style.display = "none";
-        });
-    </script>
   </body>
 </html>
