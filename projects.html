@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    /* General Section Styling */
+    #projects {
+      padding: 50px 10%;
+      background: #f9f9f9;
+      text-align: center;
+    }
+
+    #projects h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    /* Project Grid */
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fill,
+        minmax(300px, 1fr)
+      ); /* Responsive grid */
+      gap: 30px; /* Ensure proper spacing between cards */
+      justify-content: center;
+    }
+
+    /* Project Cards */
+    .project-card {
+      position: relative;
+      width: 100%;
+      height: 280px; /* Larger size */
+      padding: 20px;
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
+      border-radius: 12px;
+      cursor: pointer;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden; /* Prevents overflow from appearing */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box; /* Prevents overflow */
+    }
+
+    /* Hover Effect */
+    .project-card:hover {
+      transform: translateY(-10px); /* Moves the card up slightly */
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    }
+
+    /* Overlay with Gradient */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%; /* Ensures the overlay takes up full width of the card */
+      height: 100%; /* Ensures the overlay takes up full height of the card */
+      background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.8),
+        rgba(255, 255, 255, 0.2)
+      ); /* Gradient effect */
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 12px;
+      text-align: center;
+      opacity: 0; /* Hidden by default */
+      transform: scale(0.9);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      pointer-events: none; /* Ensures overlay does not block interactions with card links */
+    }
+
+    /* Show overlay on hover */
+    .project-card:hover .overlay {
+      opacity: 1;
+      transform: scale(1); /* Smoothly reveals the overlay */
+    }
+
+    /* Hide h3 text on hover */
+    .project-card:hover h3 {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Project Links */
+    .project-links {
+      margin-top: 15px;
+    }
+
+    .project-links a {
+      display: inline-block;
+      margin: 5px;
+      padding: 10px 20px;
+      background: #ffd700;
+      color: black;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .project-links a:hover {
+      background: #ffc107;
+    }
+
+    /* Responsive Adjustments */
+
+    /* For tablets and smaller screens */
+    @media (max-width: 1024px) {
+      .projects-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablets */
+      }
+      .project-card {
+        height: 250px; /* Slightly smaller cards for tablets */
+      }
+    }
+
+    /* For mobile screens */
+    @media (max-width: 768px) {
+      .projects-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 card per row on mobile */
+      }
+      .project-card {
+        height: 220px; /* Smaller cards for mobile */
+        font-size: 1.2rem; /* Smaller text for mobile */
+      }
+      .overlay {
+        font-size: 1rem; /* Adjust font size inside the overlay for mobile */
+      }
+    }
+
+    /* For very small screens (extra mobile adjustments) */
+    @media (max-width: 480px) {
+      .project-card {
+        height: 200px; /* Smaller height for very small screens */
+      }
+      .overlay {
+        font-size: 0.9rem; /* Even smaller text inside the overlay */
+      }
+    }
+  </style>
+  <body>
+    <section id="projects">
+      <h2>My Projects</h2>
+      <div class="projects-container">
+        <!-- Project 1 -->
+        <div class="project-card" style="background: #ff6b6b">
+          <h3>Portfolio Website</h3>
+          <div class="overlay">
+            <p>A modern, responsive portfolio to showcase my work.</p>
+            <p><strong>Tech Used:</strong> HTML, CSS, JavaScript</p>
+            <div class="project-links">
+              <a href="#" target="_blank">Live Demo</a>
+              <a href="#" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card" style="background: #6bcb77">
+          <h3>Weather App</h3>
+          <div class="overlay">
+            <p>Fetches real-time weather data and displays it beautifully.</p>
+            <p><strong>Tech Used:</strong> JavaScript, API, CSS</p>
+            <div class="project-links">
+              <a href="#" target="_blank">Live Demo</a>
+              <a href="#" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card" style="background: #4d96ff">
+          <h3>To-Do List</h3>
+          <div class="overlay">
+            <p>A simple task manager with local storage support.</p>
+            <p><strong>Tech Used:</strong> HTML, CSS, JavaScript</p>
+            <div class="project-links">
+              <a href="#" target="_blank">Live Demo</a>
+              <a href="#" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card" style="background: #ffb84d">
+          <h3>Blog Website</h3>
+          <div class="overlay">
+            <p>A simple blog platform with articles and categories.</p>
+            <p><strong>Tech Used:</strong> HTML, CSS, React</p>
+            <div class="project-links">
+              <a href="#" target="_blank">Live Demo</a>
+              <a href="#" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card" style="background: #a07be3">
+          <h3>Calculator App</h3>
+          <div class="overlay">
+            <p>A fully functional calculator with a modern UI.</p>
+            <p><strong>Tech Used:</strong> HTML, CSS, JavaScript</p>
+            <div class="project-links">
+              <a href="#" target="_blank">Live Demo</a>
+              <a href="#" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card" style="background: #ff5e78">
+          <h3>Expense Tracker</h3>
+          <div class="overlay">
+            <p>Tracks daily expenses and provides insights.</p>
+            <p><strong>Tech Used:</strong> React, Firebase</p>
+            <div class="project-links">
+              <a href="#" target="_blank">Live Demo</a>
+              <a href="#" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

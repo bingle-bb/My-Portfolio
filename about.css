@@ -14,7 +14,7 @@ body {
 }
 
 /* Header Section */
-.header-text {
+#header-text {
   position: relative;
   font-size: 3.5rem;
   font-weight: 700;
@@ -25,7 +25,7 @@ body {
 }
 
 /* Light faded background text */
-.header-text::before {
+#header-text::before {
   content: "RESUME";
   position: absolute;
   top: 20px;
@@ -70,7 +70,7 @@ body {
   margin-bottom: 15px;
   text-transform: uppercase;
   font-size: 24px;
-  color: #ffcc00;
+  color: #ffc107;
 }
 
 /* Grid Layout for Information */
@@ -379,7 +379,7 @@ a:hover {
   left: -20px;
   width: 40px;
   height: 40px;
-  background: #fcaf02;
+  background: #ffc107;
   color: black;
   border-radius: 50%;
   display: flex;
@@ -570,11 +570,20 @@ a:hover {
   padding: 40px 20px;
 }
 
-.section-title {
-  font-size: 28px;
+.certi-title {
+  font-size: 24px;
   font-weight: bold;
+  position: relative;
+  display: inline-block;
   text-transform: uppercase;
-  margin-bottom: 20px;
+}
+.certi-title::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  background-color: #ffc107;
+  margin: 5px auto 0;
 }
 
 .cert-container {
@@ -604,16 +613,17 @@ a:hover {
   display: inline-block;
   padding: 8px 12px;
   background: #ffc507c7;
-  color: #ebe4e4;
+  color: #00000098;
   text-decoration: none;
   border-radius: 5px;
-  font-weight: 200px;
+  font-weight: 500px;
   font-size: 13px;
   margin-top: 10px;
 }
 
 .cert-btn:hover {
   background: #e0a800;
+  color: #000000d3;
 }
 /* Sidebar-section */
 .sidebar {
@@ -738,4 +748,24 @@ a:hover {
   .toggle-btn {
     display: block; /* Show on small screens */
   }
+}
+/* to-top */
+.to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #ffc107;
+  color: black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.to-top:hover {
+  color: #ebe4e473;
 }
