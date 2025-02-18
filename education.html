@@ -16,31 +16,31 @@
         margin: 0;
         padding: 0;
       }
+      .timeline-header {
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-top: 40px;
+      }
+      .timeline-header::after {
+        content: "";
+        display: block;
+        width: 150px;
+        height: 4px;
+        background-color: #ffc107;
+        margin: 5px auto 0;
+      }
 
       .timeline {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
         max-width: 1200px;
-        margin: 150px;
+        margin: 20px 150px;
         padding: 20px;
       }
-      .section-title {
-        font-size: 25px;
-        font-weight: bold;
-        margin-bottom: 40px;
-        margin-top: 30px;
-        position: relative;
-        display: inline-block;
-      }
-      .section-title::after {
-        content: "";
-        display: block;
-        width: 80px;
-        height: 4px;
-        background-color: #ffc107;
-        margin: 5px auto 0;
-      }
+
       .timeline-item {
         position: relative;
         padding: 20px;
@@ -248,12 +248,14 @@
     </style>
   </head>
   <body>
+    <header>
+      <h1 class="timeline-header">EXPERIENCE & EDUCATION</h1>
+    </header>
     <section class="timeline">
-      <h2 class="section-title">EXPERIENCE & EDUCATION</h2>
       <!-- Work Experience -->
       <div class="timeline-item">
         <div class="icon-container"><i class="fas fa-briefcase"></i></div>
-        <span class="date">2018 - Present</span>
+        <span class="date">2025 - Present</span>
         <div class="title">Web Developer</div>
         <div class="company">Envato</div>
         <div class="description">
