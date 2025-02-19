@@ -3,22 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>PROJECTS - BB</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="images/ht.png" type="image/x-icon" />
   </head>
   <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: black;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
     /* General Section Styling */
     #projects {
       padding: 50px 10%;
-      background: #f9f9f9;
+
       text-align: center;
     }
 
     #projects h2 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin-bottom: 20px;
-      color: #333;
+      color: white;
+      text-transform: uppercase;
     }
-
+    .pj {
+      color: #ffc107;
+    }
     /* Project Grid */
     .projects-container {
       display: grid;
@@ -26,7 +56,7 @@
         auto-fill,
         minmax(300px, 1fr)
       ); /* Responsive grid */
-      gap: 30px; /* Ensure proper spacing between cards */
+      gap: 15px; /* Ensure proper spacing between cards */
       justify-content: center;
     }
 
@@ -34,12 +64,12 @@
     .project-card {
       position: relative;
       width: 100%;
-      height: 280px; /* Larger size */
+      height: 200px; /* Larger size */
       padding: 20px;
       color: #fff;
-      font-size: 1.5rem;
-      font-weight: bold;
-      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 200px;
+      border-radius: 10px;
       cursor: pointer;
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -52,7 +82,6 @@
 
     /* Hover Effect */
     .project-card:hover {
-      transform: translateY(-10px); /* Moves the card up slightly */
       box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
     }
 
@@ -65,9 +94,10 @@
       height: 100%; /* Ensures the overlay takes up full height of the card */
       background: linear-gradient(
         135deg,
-        rgba(0, 0, 0, 0.8),
-        rgba(255, 255, 255, 0.2)
-      ); /* Gradient effect */
+        rgba(255, 255, 255, 0.096),
+        rgba(200, 200, 200, 0.226)
+      ); /* Light gradient effect */
+
       color: white;
       display: flex;
       flex-direction: column;
@@ -87,6 +117,10 @@
       transform: scale(1); /* Smoothly reveals the overlay */
     }
 
+    strong {
+      color: black;
+      font-weight: 80px;
+    }
     /* Hide h3 text on hover */
     .project-card:hover h3 {
       opacity: 0;
@@ -101,12 +135,12 @@
     .project-links a {
       display: inline-block;
       margin: 5px;
-      padding: 10px 20px;
+      padding: 8px 16px;
       background: #ffd700;
       color: black;
       text-decoration: none;
       border-radius: 6px;
-      font-weight: bold;
+      font-weight: 800px;
       transition: background 0.3s;
     }
 
@@ -149,16 +183,151 @@
         font-size: 0.9rem; /* Even smaller text inside the overlay */
       }
     }
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: flex-end;
+      transition: right 0.3s ease-in-out;
+    }
+
+    /* Sidebar Buttons */
+    .sidebar a {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: #333;
+      border-radius: 50%;
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      overflow: hidden;
+      transition: width 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+    }
+
+    /* Icons */
+    .sidebar a i {
+      font-size: 18px;
+      position: absolute;
+      right: 15px;
+    }
+    /* Hide Text Initially */
+    .sidebar a span {
+      position: absolute;
+      right: 50px;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    /* Expand on Hover */
+    .sidebar a:hover {
+      width: 140px;
+      border-radius: 25px;
+      background: #ffc107;
+      color: black;
+      padding-left: 15px;
+    }
+
+    /* Show Text on Hover */
+    .sidebar a:hover span {
+      opacity: 1;
+    }
+
+    /* Fix Icon Position on Hover */
+    .sidebar a:hover i {
+      right: 15px;
+    }
+
+    /* Toggle Button for Small Screens */
+    .toggle-btn {
+      position: fixed;
+      right: 15px;
+      top: 15px;
+      background: #ffc107;
+      color: black;
+      border: none;
+      padding: 10px 15px;
+      font-size: 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: 0.3s ease-in-out;
+      display: none; /* Hide by default */
+    }
+
+    .toggle-btn:hover {
+      background: white;
+    }
+
+    /* Hide Sidebar on Small Screens */
+    @media (max-width: 768px) {
+      .sidebar {
+        right: -200px; /* Hide initially */
+        flex-direction: column;
+        align-items: flex-start;
+        background: #222;
+        padding: 20px;
+        border-radius: 10px;
+        transition: right 0.3s ease-in-out;
+      }
+
+      .sidebar.show {
+        right: 10px; /* Show when toggled */
+      }
+
+      .sidebar a {
+        width: 100%;
+        border-radius: 5px;
+        justify-content: flex-start;
+        padding-left: 15px;
+      }
+
+      .sidebar a i {
+        position: relative;
+        right: auto;
+        margin-right: 10px;
+      }
+
+      .sidebar a span {
+        opacity: 1;
+        position: relative;
+        right: auto;
+      }
+
+      .toggle-btn {
+        display: block; /* Show on small screens */
+      }
+    }
+    @media (max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+      }
+      .contact-info,
+      .contact-form {
+        width: 100%;
+      }
+    }
   </style>
   <body>
     <section id="projects">
-      <h2>My Projects</h2>
+      <h2>My <strong class="pj">Projects</strong></h2>
       <div class="projects-container">
         <!-- Project 1 -->
-        <div class="project-card" style="background: #ff6b6b">
+        <div class="project-card" style="background: #ff6b6bbe">
           <h3>Portfolio Website</h3>
           <div class="overlay">
-            <p>A modern, responsive portfolio to showcase my work.</p>
+            <p>
+              A modern, responsive portfolio <br />
+              to showcase my work.
+            </p>
             <p><strong>Tech Used:</strong> HTML, CSS, JavaScript</p>
             <div class="project-links">
               <a href="#" target="_blank">Live Demo</a>
@@ -168,10 +337,13 @@
         </div>
 
         <!-- Project 2 -->
-        <div class="project-card" style="background: #6bcb77">
+        <div class="project-card" style="background: #6bcb78d0">
           <h3>Weather App</h3>
           <div class="overlay">
-            <p>Fetches real-time weather data and displays it beautifully.</p>
+            <p>
+              Fetches real-time weather data <br />
+              and displays it beautifully.
+            </p>
             <p><strong>Tech Used:</strong> JavaScript, API, CSS</p>
             <div class="project-links">
               <a href="#" target="_blank">Live Demo</a>
@@ -181,10 +353,10 @@
         </div>
 
         <!-- Project 3 -->
-        <div class="project-card" style="background: #4d96ff">
+        <div class="project-card" style="background: #4d97ff8e">
           <h3>To-Do List</h3>
           <div class="overlay">
-            <p>A simple task manager with local storage support.</p>
+            <p>A simple task manager with <br />local storage support.</p>
             <p><strong>Tech Used:</strong> HTML, CSS, JavaScript</p>
             <div class="project-links">
               <a href="#" target="_blank">Live Demo</a>
@@ -194,10 +366,10 @@
         </div>
 
         <!-- Project 4 -->
-        <div class="project-card" style="background: #ffb84d">
+        <div class="project-card" style="background: #ffb84dcc">
           <h3>Blog Website</h3>
           <div class="overlay">
-            <p>A simple blog platform with articles and categories.</p>
+            <p>A simple blog platform with <br />articles and categories.</p>
             <p><strong>Tech Used:</strong> HTML, CSS, React</p>
             <div class="project-links">
               <a href="#" target="_blank">Live Demo</a>
@@ -207,10 +379,10 @@
         </div>
 
         <!-- Project 5 -->
-        <div class="project-card" style="background: #a07be3">
+        <div class="project-card" style="background: #9f7be3ad">
           <h3>Calculator App</h3>
           <div class="overlay">
-            <p>A fully functional calculator with a modern UI.</p>
+            <p>A fully functional calculator <br />with a modern UI.</p>
             <p><strong>Tech Used:</strong> HTML, CSS, JavaScript</p>
             <div class="project-links">
               <a href="#" target="_blank">Live Demo</a>
@@ -220,11 +392,52 @@
         </div>
 
         <!-- Project 6 -->
-        <div class="project-card" style="background: #ff5e78">
+        <div class="project-card" style="background: #ff5e7996">
           <h3>Expense Tracker</h3>
           <div class="overlay">
-            <p>Tracks daily expenses and provides insights.</p>
+            <p>
+              Tracks daily expenses and <br />
+              provides insights.
+            </p>
             <p><strong>Tech Used:</strong> React, Firebase</p>
+            <div class="project-links">
+              <a href="#" target="_blank">Live Demo</a>
+              <a href="#" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+        <!-- Project 1: Education -->
+        <div class="project-card" style="background: #6aaee6e3">
+          <h3>Online Learning Platform</h3>
+          <div class="overlay">
+            <p>An interactive platform <br />for online courses.</p>
+            <p><strong>Tech Used:</strong> HTML, CSS, JavaScript</p>
+            <div class="project-links">
+              <a href="#" target="_blank">Live Demo</a>
+              <a href="#" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Travel -->
+        <div class="project-card" style="background: #ff9966e8">
+          <h3>Travel Guide</h3>
+          <div class="overlay">
+            <p>A travel website offering <br />destination guides.</p>
+            <p><strong>Tech Used:</strong> HTML, CSS, JavaScript</p>
+            <div class="project-links">
+              <a href="#" target="_blank">Live Demo</a>
+              <a href="#" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Cafe -->
+        <div class="project-card" style="background: #c47e5eea">
+          <h3>Café Website</h3>
+          <div class="overlay">
+            <p>A modern café website <br />with an online menu.</p>
+            <p><strong>Tech Used:</strong> HTML, CSS</p>
             <div class="project-links">
               <a href="#" target="_blank">Live Demo</a>
               <a href="#" target="_blank">GitHub</a>
@@ -233,5 +446,33 @@
         </div>
       </div>
     </section>
+    <!-- Toggle Button -->
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <a href="index.html" class="home-btn"
+        ><i class="fas fa-home"></i> <span>Home</span></a
+      >
+      <a href="about.html" class="about-btn"
+        ><i class="fas fa-user"></i> <span>About</span></a
+      >
+      <a href="projects.html" class="skills-btn"
+        ><i class="fas fa-project-diagram"></i> <span>Projects</span></a
+      >
+      <a href="services.html" class="services-btn"
+        ><i class="fas fa-cogs"></i> <span>Services</span></a
+      >
+      <a href="contactme.html" class="contact-btn"
+        ><i class="fas fa-envelope"></i> <span>Contact</span></a
+      >
+    </div>
+
+    <script>
+      function toggleSidebar() {
+        let sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("show");
+      }
+    </script>
   </body>
 </html>
